@@ -1,0 +1,26 @@
+mixin gallery(mods)
+  -
+    var baseName = 'gallery';
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          if (modsList[i].trim()[0] == '-') {
+            allMods = allMods + baseName + modsList[i].trim() + ' ';
+          } else {
+            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
+          }
+        }
+      }
+
+  .gallery(class=allMods)&attributes(attributes)
+    .gallery__item
+      a.gallery__link(href="/img/fancy_img1.png" data-fancybox="gallery")
+        img.gallery__img(src="/img/fancy_img1.png" alt="")
+    .gallery__item
+      a.gallery__link(href="/img/fancy_img2.png" data-fancybox="gallery")
+        img.gallery__img(src="/img/fancy_img2.png" alt="")
+    .gallery__item
+      a.gallery__link(href="/img/fancy_img3.png" data-fancybox="gallery")
+        img.gallery__img(src="/img/fancy_img3.png" alt="")
+    block

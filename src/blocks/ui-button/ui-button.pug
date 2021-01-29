@@ -1,0 +1,21 @@
+mixin ui-button(text, mods, submit, href)
+  -
+    var baseName = 'ui-button';
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          if (modsList[i].trim()[0] == '-') {
+            allMods = allMods + baseName + modsList[i].trim() + ' ';
+          } else {
+            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
+          }
+        }
+      }
+
+  if submit
+    .ui-button(class=allMods)
+      input(type="submit", value=text)
+  else
+    .ui-button(class=allMods)
+      a(href=href)=text

@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+*:focus {
+  outline: none;
+}
+html {
+  box-sizing: border-box;
+  line-height: 1;
+}
+body {
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: $black;
+  transition: ease 0.3s;
+  &:hover {
+    color: teal;
+  }
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+span,
+ul,
+ol,
+li,
+tr,
+td,
+th,
+table,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+// defaults
+.wrapper {
+  position: relative;
+  max-width: 1920px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: $font;
+  color: $black;
+  .inner {
+    max-width: 1340px;
+    margin: 0 auto;
+    @include media-laptop {
+      max-width: 980px;
+    }
+    @include media-tablet-horizontal {
+      max-width: 760px;
+    }
+    @include media-tablet {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+  }
+  .page-content {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+}

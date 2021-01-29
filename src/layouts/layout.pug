@@ -1,0 +1,26 @@
+block variables
+include ../blocks/mixins
+
+doctype html
+html(lang="ru")
+  block head
+    head
+      meta(charset="utf-8")
+      title=pageTitle
+      meta(content="width=device-width, initial-scale=1" name="viewport")
+      meta(content="ie=edge" http-equiv="x-ua-compatible")
+      link(href="." rel="icon" type="image/x-icon")
+      link(rel="stylesheet" href="css/style.min.css")
+  body
+    .wrapper
+      block header
+        include ../blocks/header/header
+      block content
+      block footer
+        include ../blocks/footer/footer
+    block scripts
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js")
+      script.
+        svg4everybody();
+      script(src="js/vendors.js")
+      script(src="js/scripts.js")

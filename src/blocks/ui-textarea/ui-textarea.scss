@@ -1,0 +1,28 @@
+.ui-textarea {
+  position: relative;
+  textarea {
+    width: 100%;
+    padding: 16px 20px 13px;
+    font: 16px/1.5 $font;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    outline: 0;
+    resize: none;
+    &.parsley-error {
+      border-color: red;
+    }
+  }
+  .parsley-errors-list {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    font: 300 14px/1 $font;
+    color: red;
+    background: #fff;
+    border-radius: 4px;
+    &.filled {
+      padding: 5px 10px;
+    }
+  }
+}

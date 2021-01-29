@@ -1,0 +1,42 @@
+extends layouts/layout
+
+block variables
+  -const pageTitle ='Repository blocks'
+
+block content
+  main.page-content
+    .inner
+      +section-title(pageTitle)
+      +page-section()
+        +section-title('Breadcrumbs', 'page-section')
+        +breadcrumbs()
+          +breadcrumbs-item('Main', '/')
+          +breadcrumbs-item('News')
+      +page-section()
+        +section-title('Gallery', 'page-section')
+        +gallery()
+      +page-section()
+        +section-title('Page title', 'page-section')
+        +page-title(pageTitle)
+      +page-section()
+        +section-title('Pagination', 'page-section')
+        +pagination()
+      +page-section()
+        +section-title('Section title', 'page-section')
+        +section-title('Section title')
+      +page-section()
+        +section-title('Slider', 'page-section')
+        +slider()
+      +page-section()
+        +section-title('UI Buttons', 'page-section')
+        +ui-button('Hollow')
+        +ui-button('Filled', '--filled')
+      +page-section()
+        +section-title('UI Checkbox', 'page-section')
+        +ui-checkbox('id', 'I love <a href="#">semolina</a>')
+      +page-section()
+        +section-title('UI Input', 'page-section')
+        +ui-input('Phone', 'phone')
+      +page-section()
+        +section-title('UI Select', 'page-section')
+        +ui-select('Option 1', 'Option 2', 'Option 3', 'Option 4')

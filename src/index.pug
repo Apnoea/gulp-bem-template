@@ -1,0 +1,10 @@
+extends layouts/layout
+
+block variables
+  -const pageTitle ='Main'
+
+block content
+  main.page-content
+    .inner
+      +page-title(pageTitle)
+      a(href="blocks.html") Repository blocks

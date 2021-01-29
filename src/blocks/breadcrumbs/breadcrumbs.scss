@@ -1,0 +1,43 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  @include media-tablet-horizontal {
+    overflow-y: auto;
+  }
+  &__item {
+    position: relative;
+    margin-right: 5px;
+    padding-right: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 1px;
+      background: #aaa;
+    }
+    @include media-tablet {
+      font-size: 12px;
+    }
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    color: #575757;
+    &:hover {
+      color: teal;
+    }
+  }
+  &__text {
+    color: #aaa;
+  }
+}

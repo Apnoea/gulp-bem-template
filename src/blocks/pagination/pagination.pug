@@ -1,0 +1,26 @@
+mixin pagination(mods)
+  -
+    var baseName = 'pagination';
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          if (modsList[i].trim()[0] == '-') {
+            allMods = allMods + baseName + modsList[i].trim() + ' ';
+          } else {
+            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
+          }
+        }
+      }
+
+  .pagination(class=allMods)&attributes(attributes)
+    a.pagination__link.pagination__link--prev.pagination__link--disabled(href="#")
+      svg(xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewbox="0 0 8 12")
+        path(fill="currentColor" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z")
+    ul.pagination__list
+      each item, index in [1, 2, 3]
+          li.pagination__item(class=(index === 0 ? 'pagination__item--active' : ''))
+            a.pagination__link(href="#")=item
+    a.pagination__link.pagination__link--next(href="#")
+      svg(xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewbox="0 0 8 12")
+        path(fill="currentColor" d="M7.41 1.41L6 0 0 6l6 6 1.41-1.41L2.83 6z")

@@ -1,0 +1,14 @@
+.page-title {
+  margin-bottom: 30px;
+  font: 36px/1.1 $font;
+  @include media-laptop {
+    font-size: 28px;
+  }
+  @include media-tablet {
+    font-size: 20px;
+  }
+  &__text {
+    margin-bottom: inherit;
+    font: inherit;
+  }
+}

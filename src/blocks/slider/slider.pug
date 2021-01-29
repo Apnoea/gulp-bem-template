@@ -1,0 +1,28 @@
+mixin slider(mods)
+  -
+    var baseName = 'slider';
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          if (modsList[i].trim()[0] == '-') {
+            allMods = allMods + baseName + modsList[i].trim() + ' ';
+          } else {
+            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
+          }
+        }
+      }
+
+  .slider(class=allMods)&attributes(attributes)
+    .swiper-container
+      .swiper-wrapper
+        .swiper-slide
+          +icon('icon_fb')
+        .swiper-slide
+          +icon('icon_ig')
+        .swiper-slide
+          +icon('icon_tt')
+      .swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next
+    block

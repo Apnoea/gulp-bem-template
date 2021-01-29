@@ -1,0 +1,13 @@
+mixin ui-input(text, id, r, type)
+  if !type
+    .ui-input
+      input(id=id type="text")
+      label(for=id)=text
+  else if r
+    .ui-input
+      input(id=id required type=type)
+      label(for=id)=text
+  else
+    .ui-input
+      input(id=id type=type)
+      label(for=id)=text

@@ -1,0 +1,11 @@
+.page-section {
+  padding: 25px;
+  border: 2px dashed #ccc;
+  &:not(:first-child) {
+    margin-top: 50px;
+  }
+  &__section-title {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+}

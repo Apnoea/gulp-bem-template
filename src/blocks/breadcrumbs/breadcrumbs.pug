@@ -1,0 +1,33 @@
+mixin breadcrumbs(mods)
+  -
+    var baseName = 'breadcrumbs';
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          if (modsList[i].trim()[0] == '-') {
+            allMods = allMods + baseName + modsList[i].trim() + ' ';
+          } else {
+            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
+          }
+        }
+      }
+
+  ul.breadcrumbs(class=allMods)&attributes(attributes)
+    block
+
+mixin breadcrumbs-item(text, href, mods)
+  -
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' breadcrumbs__item--' + modsList[i].trim();
+      }
+    }
+
+  li.breadcrumbs__item(class=allMods)&attributes(attributes)
+    if(typeof(href) !== 'undefined' && href)
+      a.breadcrumbs__link(href=href)!=text
+    else
+      span.breadcrumbs__text!=text

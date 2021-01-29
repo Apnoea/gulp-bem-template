@@ -1,0 +1,43 @@
+-
+  var headerMenu =[
+    { title: 'Services',
+      item: [
+        { name: 'Unit Calculator', link: 'services.html' },
+        { name: 'Transportation', link: 'services.html' },
+        { name: 'Shelving', link: 'services.html' },
+        { name: 'Packing materials', link: 'services.html' },
+        { name: 'Insurance', link: 'services.html' }
+      ]
+    },
+    { title: 'Prices', link: 'prices.html' },
+    { title: 'About us',
+      item: [
+        { name: 'SmartBox', link: 'smartbox.html' },
+        { name: 'Team', link: 'team.html' },
+        { name: 'News', link: 'news.html' },
+        { name: 'Gallery', link: 'gallery.html' },
+        { name: 'Contacts', link: 'contacts.html' }
+      ]
+    },
+    { title: 'FAQ', link: 'faq.html' }
+  ]
+
+header.header
+  .inner
+    .header-logo
+      a(href="/")
+        +icon('icon_logo')
+    .header-menu
+      each headerMenuItem, index in headerMenu
+        .header-menu__item
+          case index
+            when 1
+            when 3
+              .header-menu__title
+                a.header-menu__link(href=headerMenuItem.link)=headerMenuItem.title
+            default
+              .header-menu__title.header-menu__title--arrow=headerMenuItem.title
+              ul.header-list
+                each headerMenuItemName in headerMenuItem.item
+                  li.header-list__name
+                    a.header-list__link(href=headerMenuItemName.link)=headerMenuItemName.name

@@ -1,0 +1,4 @@
+mixin icon(iconName)
+  -mod = mod || ''
+    svg.svg-icon(class=iconName)
+      use(xlink:href="img/sprite.svg#" + iconName)

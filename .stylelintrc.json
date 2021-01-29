@@ -1,0 +1,66 @@
+{
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-htmlacademy"
+  ],
+  "rules": {
+    "indentation": 2,
+    "at-rule-no-vendor-prefix": true,
+    "at-rule-empty-line-before": ["always", {
+      "except": ["after-same-name", "inside-block"]
+    }],
+    "rule-empty-line-before": ["always", {
+      "except": ["after-rule", "after-single-line-comment", "inside-block", "first-nested"]
+    }],
+    "color-hex-length": "short",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "scss/at-import-partial-extension": "never",
+    "block-closing-brace-newline-before": "always",
+    "block-closing-brace-newline-after": "always",
+    "no-descending-specificity": null,
+    "at-rule-name-case": "lower",
+    "at-rule-name-space-after": "always",
+    "at-rule-semicolon-newline-after": "always",
+    "at-rule-semicolon-space-before": "never",
+    "string-quotes": "single",
+    "unit-allowed-list": [
+      "em",
+      "rem",
+      "deg",
+      "fr",
+      "%",
+      "s",
+      "px",
+      "vw",
+      "vh",
+      "vm",
+      "vmax",
+      "vmin"
+    ],
+    "order/properties-order": [
+      {
+        "properties": [
+          "position",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "z-index"
+        ]
+      },
+      {
+        "properties": [
+          "width",
+          "height",
+          "margin",
+          "padding"
+        ]
+      }
+    ]
+  }
+}
