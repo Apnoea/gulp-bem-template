@@ -1,34 +1,34 @@
 {
   "name": "gulp-bem-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple bem pug+scss template",
+  "author": "Alexey Kozyutenko",
+  "license": "MIT",
   "main": "gulpfile.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp development",
     "build": "cross-env NODE_ENV=production gulp production",
-    "script": "cross-env NODE_ENV=production gulp script",
+    "scripts": "cross-env NODE_ENV=production gulp scripts",
     "bem": "bem create $* -l src/blocks/"
   },
   "browserslist": [
     "> 5%",
     "last 2 version"
   ],
-  "author": "Alexey Kozyutenko",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Apnoea/gulp-bem-template.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
     "babel-loader": "^8.2.2",
     "bem-tools-core": "^0.0.3",
     "bem-tools-create": "^2.3.0",
     "browser-sync": "^2.26.14",
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "eslint-config-htmlacademy": "^2.1.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
@@ -75,7 +75,7 @@
     "nouislider": "^14.6.3",
     "parsleyjs": "^2.9.2",
     "select2": "^4.0.13",
-    "swiper": "^6.4.9",
+    "swiper": "^6.4.10",
     "tooltipster": "^4.2.8"
   }
 }

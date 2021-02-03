@@ -8,7 +8,7 @@ const pug = require('gulp-pug')
 const htmlValidator = require('gulp-w3c-html-validator')
 const browsersync = require('browser-sync')
 
-module.exports = function pug2html () {
+module.exports = function pug2html() {
   return gulp.src('src/**/*.pug')
     .pipe(plumber())
     .pipe(cached('pugCache'))

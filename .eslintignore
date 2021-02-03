@@ -1,4 +1,5 @@
 /build
 /gulp-tasks
 
-gulpfiles.js
+gulpfile.js
+webpack.config.js

@@ -12,4 +12,4 @@ const build = gulp.series(clean, gulp.parallel(pug2html, styles, scripts, fonts,
 
 module.exports.development = gulp.series(build, serve)
 module.exports.production = build
-module.exports.script = gulp.series(clean, scripts)
+module.exports.scripts = gulp.series(clean, scripts)

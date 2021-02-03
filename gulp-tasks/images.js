@@ -4,7 +4,7 @@ const imagemin = require('gulp-imagemin')
 const imageminPngquant = require('imagemin-pngquant')
 const browsersync = require('browser-sync')
 
-module.exports = function images () {
+module.exports = function images() {
   return gulp.src('src/images/**/*.{gif,png,jpg,webp}')
     .pipe(changed('build/img'))
     .pipe(imagemin([

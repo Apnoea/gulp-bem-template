@@ -9,7 +9,7 @@ const rename = require('gulp-rename')
 const cleanCSS = require('gulp-clean-css')
 const browsersync = require('browser-sync')
 
-module.exports = function styles () {
+module.exports = function styles() {
   return gulp.src('src/**/*.scss')
     .pipe(plumber())
     .pipe(gulpStylelint({

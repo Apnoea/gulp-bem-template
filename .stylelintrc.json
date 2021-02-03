@@ -60,6 +60,13 @@
           "margin",
           "padding"
         ]
+      },
+      {
+        "properties": [
+          "background",
+          "border",
+          "border-radius"
+        ]
       }
     ]
   }

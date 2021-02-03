@@ -7,28 +7,28 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": [
-    "sonarjs",
-    "unicorn"
+  "plugins": ["sonarjs", "unicorn"],
+  "extends": [
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended",
+    "standard",
+    "htmlacademy/vanilla"
   ],
-  "overrides": [
-    {
-      "files": [ "src/**/*.js" ],
-      "extends": [
-        "plugin:sonarjs/recommended",
-        "plugin:unicorn/recommended",
-        "standard",
-        "htmlacademy/vanilla"
-      ],
-      "rules": {
-        "import/no-named-as-default": "off",
-        "indent": [ "error", 2 ],
-        "comma-dangle": ["error", "never"],
-        "no-unused-vars": "off",
-        "no-console": "error",
-        "semi": [ "error", "never" ],
-        "quotes": [ "error", "single" ]
+  "rules": {
+    "import/no-named-as-default": "off",
+    "indent": ["error", 2],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "never"
       }
-    }
-  ]
+    ],
+    "comma-dangle": ["error", "never"],
+    "no-unused-vars": "off",
+    "no-console": "error",
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"]
+  }
 }

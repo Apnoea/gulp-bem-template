@@ -1,36 +1,30 @@
-const path = require('path'),
-  webpack = require('webpack')
+const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    main: './src/js/index.js',
+    main: path.resolve(__dirname, './src/js/index.js')
   },
   output: {
+    path: path.resolve(__dirname, './build/js'),
     filename: 'scripts.js',
-    chunkFilename: '[name].js',
-    publicPath: '/'
+    chunkFilename: '[name].js'
   },
   plugins: [
     new webpack.ProvidePlugin({
-      '$': 'jquery',
-      'window.$': 'jquery',
-      'jQuery': 'jquery',
-      'window.jQuery': 'jquery',
-      'jquery': 'jquery',
-      'window.jquery': 'jquery'
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.js$/,
+        exclude: [/node_modules/],
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
+          options: {presets: ['@babel/preset-env']}
         }
       }
     ]
