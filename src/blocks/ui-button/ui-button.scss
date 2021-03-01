@@ -1,6 +1,7 @@
 .ui-button {
   display: inline-block;
   a,
+  button,
   input {
     width: 100%;
     padding: 15px 50px;
@@ -26,6 +27,7 @@
   }
   &--filled {
     a,
+    button,
     input {
       color: #fff;
       background: teal;

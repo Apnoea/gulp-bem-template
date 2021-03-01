@@ -9,7 +9,7 @@ function inputMask() {
 }
 
 function checkInputFill() {
-  $('.ui-input input').val('')
+  $('.ui-input input[type!="submit"]').val('')
   $('input').on('change', function () {
     if ($(this).val() !== '') {
       $(this).addClass('filled')

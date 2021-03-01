@@ -12,7 +12,7 @@
   "requireLowerCaseAttributes": true,
   "requireLowerCaseTags": true,
   "requireStrictEqualityOperators": true,
-  "validateAttributeQuoteMarks": "\"",
+  "validateAttributeQuoteMarks": "'",
   "validateDivTags": true,
   "validateLineBreaks": "LF"
 }

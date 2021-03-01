@@ -1,4 +1,20 @@
-mixin ui-checkbox(id, text)
-  .ui-checkbox
-    input(id=id type="checkbox" name=id)
-    label(for=id)!=text
+mixin ui-checkbox(id, text, mods)
+  -
+    var baseName = 'ui-checkbox';
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          if (modsList[i].trim()[0] == '-') {
+            allMods = allMods + baseName + modsList[i].trim() + ' ';
+          } else {
+            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
+          }
+        }
+      }
+
+  .ui-checkbox(class=allMods)&attributes(attributes)
+    label(for=id)
+      input(id=id type='checkbox' name=id)
+      span!=text
+        block

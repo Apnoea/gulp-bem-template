@@ -14,13 +14,18 @@ mixin gallery(mods)
       }
 
   .gallery(class=allMods)&attributes(attributes)
-    .gallery__item
-      a.gallery__link(href="/img/fancy_img1.png" data-fancybox="gallery")
-        img.gallery__img(src="/img/fancy_img1.png" alt="")
-    .gallery__item
-      a.gallery__link(href="/img/fancy_img2.png" data-fancybox="gallery")
-        img.gallery__img(src="/img/fancy_img2.png" alt="")
-    .gallery__item
-      a.gallery__link(href="/img/fancy_img3.png" data-fancybox="gallery")
-        img.gallery__img(src="/img/fancy_img3.png" alt="")
     block
+
+mixin gallery-item(src, mods)
+  -
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' gallery__item--' + modsList[i].trim();
+      }
+    }
+
+  .gallery__item(class=allMods)&attributes(attributes)
+    a.gallery__link(href='/img/' + src data-fancybox='gallery')
+      img.gallery__img(src='/img/' + src alt='')

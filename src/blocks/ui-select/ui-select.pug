@@ -1,5 +1,19 @@
-mixin ui-select( ...data)
-  .ui-select
+mixin ui-select(mods, ...data)
+  -
+    var baseName = 'ui-select';
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          if (modsList[i].trim()[0] == '-') {
+            allMods = allMods + baseName + modsList[i].trim() + ' ';
+          } else {
+            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
+          }
+        }
+      }
+
+  .ui-select(class=allMods)&attributes(attributes)
     select
       each item in data
         option=item
