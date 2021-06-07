@@ -9,7 +9,7 @@ function inputMask() {
 }
 
 function checkInputFill() {
-  $('.ui-input input[type!="submit"]').val('')
+  $('.ui-input input[type!="submit"]').not('.flatpickr-input').val('')
   $('input').on('change', function () {
     if ($(this).val() !== '') {
       $(this).addClass('filled')

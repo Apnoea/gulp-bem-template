@@ -29,6 +29,8 @@
     "no-unused-vars": "off",
     "no-console": "error",
     "semi": ["error", "never"],
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "prefer-arrow-callback": "off",
+    "id-length": ["error", { "exceptions": ["$"] }]
   }
 }

@@ -12,11 +12,11 @@
     border-radius: 4px;
     transition: 0.3s;
     &:hover {
-      color: teal;
+      color: $teal;
     }
     &--prev,
     &--next {
-      background: teal;
+      background: $teal;
       svg {
         position: absolute;
         top: 50%;
@@ -59,7 +59,7 @@
     }
     &--active {
       .pagination__link {
-        color: teal;
+        color: $teal;
         cursor: default;
       }
     }

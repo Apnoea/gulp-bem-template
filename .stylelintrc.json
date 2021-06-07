@@ -28,6 +28,7 @@
     "at-rule-semicolon-newline-after": "always",
     "at-rule-semicolon-space-before": "never",
     "string-quotes": "single",
+    "max-nesting-depth": null,
     "unit-allowed-list": [
       "em",
       "rem",

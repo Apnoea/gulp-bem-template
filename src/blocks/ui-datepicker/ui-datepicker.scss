@@ -1,0 +1,129 @@
+.ui-datepicker {
+  .ui-input {
+    &:hover {
+      .icon_calendar {
+        color: $teal;
+      }
+    }
+    input {
+      padding-right: 40px;
+      cursor: pointer;
+      &.filled ~ .icon_calendar,
+      &:focus ~ .icon_calendar {
+        color: $teal;
+      }
+    }
+    .icon_calendar {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      width: 18px;
+      height: 20px;
+      transform: translateY(-50%);
+      color: $teal;
+      transition: 0.3s ease;
+      pointer-events: none;
+      @include media-tablet {
+        right: 15px;
+      }
+    }
+  }
+  &--range {
+    .ui-input {
+      width: 235px;
+      @include media-tablet {
+        width: 200px;
+      }
+    }
+  }
+  &--time {
+    .svg-icon {
+      display: none;
+    }
+  }
+}
+.flatpickr-calendar {
+  width: 220px;
+  font: 16px/1.5 $font;
+  color: $teal;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 4px 10px 16px rgba(169, 164, 181, 0.2);
+  &.arrowBottom {
+    margin-top: -10px;
+  }
+  .flatpickr-months {
+    position: relative;
+    height: 50px;
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    .flatpickr-month {
+      height: 100%;
+      .flatpickr-current-month {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 15%;
+        height: 100%;
+        padding: 0;
+        select {
+          text-align-last: center;
+        }
+      }
+      .flatpickr-monthDropdown-months {
+        padding: 0;
+      }
+    }
+  }
+  .flatpickr-weekdays {
+    height: 36px;
+    background: $teal;
+    .flatpickr-weekday {
+      font: 400 14px/1.5 $font;
+      color: #fff;
+    }
+  }
+  .flatpickr-days {
+    width: 100%;
+    .dayContainer {
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      .flatpickr-day {
+        max-width: 32px;
+        height: 32px;
+        font: 12px/32px $font;
+        border: 0;
+        border-radius: 6px;
+        box-shadow: none;
+        &:nth-last-child(-n+7) {
+          display: none;
+        }
+        &.inRange {
+          background: $teal;
+          border-radius: 0;
+        }
+        &.today {
+          text-decoration: underline;
+          color: $teal;
+          border-color: transparent;
+        }
+        &.selected {
+          color: #fff;
+          background: $teal;
+        }
+        &.startRange {
+          border-radius: 6px 0 0 6px;
+        }
+        &.endRange {
+          background: $teal;
+          border-radius: 0 6px 6px 0;
+        }
+      }
+    }
+  }
+}

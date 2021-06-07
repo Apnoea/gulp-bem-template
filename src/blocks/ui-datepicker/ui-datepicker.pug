@@ -1,0 +1,18 @@
+mixin ui-datepicker(title, mods)
+  -
+    var baseName = 'ui-datepicker';
+    var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          if (modsList[i].trim()[0] == '-') {
+            allMods = allMods + baseName + modsList[i].trim() + ' ';
+          } else {
+            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
+          }
+        }
+      }
+
+  .ui-datepicker(class=allMods)&attributes(attributes)
+    +ui-input('datepicker' + mods, title, 'ui-datepicker')(readonly)
+      +icon('icon_calendar')

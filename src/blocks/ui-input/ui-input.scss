@@ -5,7 +5,7 @@
     padding: 16px 20px 13px;
     font: 16px/1.5 $font;
     background: #fff;
-    border: 1px solid teal;
+    border: 1px solid $teal;
     border-radius: 6px;
     outline: none;
     &.filled ~ label,
@@ -15,7 +15,7 @@
       font-size: 10px;
     }
     &.parsley-error ~ label {
-      color: red;
+      color: $orange;
     }
   }
   .parsley-errors-list {
@@ -23,7 +23,7 @@
     bottom: -30px;
     left: 0;
     font: 300 14px/1 $font;
-    color: red;
+    color: $orange;
     background: #fff;
     border-radius: 4px;
     &.filled {

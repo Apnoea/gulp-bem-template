@@ -10,7 +10,7 @@
     outline: 0;
     resize: none;
     &.parsley-error {
-      border-color: red;
+      border-color: $orange;
     }
   }
   .parsley-errors-list {
@@ -18,7 +18,7 @@
     bottom: -30px;
     left: 0;
     font: 300 14px/1 $font;
-    color: red;
+    color: $orange;
     background: #fff;
     border-radius: 4px;
     &.filled {

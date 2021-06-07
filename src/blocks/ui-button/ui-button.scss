@@ -9,7 +9,7 @@
     text-transform: uppercase;
     color: $black;
     background: #fff;
-    border: 1px solid teal;
+    border: 1px solid $teal;
     border-radius: 6px;
     transition: 0.3s ease;
     cursor: pointer;
@@ -22,7 +22,7 @@
       font-size: 13px;
     }
     &:hover {
-      color: teal;
+      color: $teal;
     }
   }
   &--filled {
@@ -30,9 +30,9 @@
     button,
     input {
       color: #fff;
-      background: teal;
+      background: $teal;
       &:hover {
-        color: teal;
+        color: $teal;
         background: #fff;
       }
     }
