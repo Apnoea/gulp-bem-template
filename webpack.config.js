@@ -7,7 +7,7 @@ module.exports = {
     main: path.resolve(__dirname, './src/js/index.js')
   },
   output: {
-    path: path.resolve(__dirname, './build/js'),
+    path: path.resolve(__dirname, './public/js'),
     filename: 'scripts.js',
     chunkFilename: '[name].js'
   },

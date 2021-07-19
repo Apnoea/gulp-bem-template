@@ -9,6 +9,6 @@ module.exports = function scripts() {
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('public/js'))
     .on('end', browsersync.reload)
 }

@@ -1,5 +1,5 @@
-/build
 /gulp-tasks
+/public
 
 gulpfile.js
 webpack.config.js

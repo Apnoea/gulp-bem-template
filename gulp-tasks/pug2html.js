@@ -22,6 +22,6 @@ module.exports = function pug2html() {
     .pipe(filter('src/*.pug'))
     .pipe(pug({ pretty: true }))
     .pipe(htmlValidator())
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('public'))
     .pipe(browsersync.stream())
 }

@@ -8,7 +8,7 @@ const server = require('browser-sync')
 
 module.exports = function serve(cb) {
   server.init({
-    server: 'build',
+    server: 'public',
     notify: false,
     cors: true
   })

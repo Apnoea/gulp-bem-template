@@ -23,6 +23,6 @@ module.exports = function styles() {
     .pipe(cleanCSS({ compatibility: '*', level: 2 }))
     .pipe(rename({ dirname: 'css', suffix: '.min' }))
     .pipe(plumber.stop())
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('public'))
     .pipe(browsersync.stream())
 }
