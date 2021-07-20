@@ -1,0 +1,18 @@
+image: node:14.17.3
+
+pages:
+  cache:
+    key: cache-for-my-task-${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+  stage: deploy
+  script:
+  - npm install yarn
+  - yarn
+  - yarn build
+  - mv build public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
