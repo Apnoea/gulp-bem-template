@@ -12,6 +12,6 @@ module.exports = function images() {
       imagemin.gifsicle({ interlaced: true }),
       imagemin.mozjpeg({ quality: 75, progressive: true })
     ]))
-    .pipe(gulp.dest('public/img'))
+    .pipe(gulp.dest('build/img'))
     .on('end', browsersync.reload)
 }

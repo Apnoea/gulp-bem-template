@@ -14,6 +14,6 @@ module.exports = function svgs() {
         }
       }
     }))
-    .pipe(gulp.dest('public/img'))
+    .pipe(gulp.dest('build/img'))
     .on('end', browsersync.reload)
 }
