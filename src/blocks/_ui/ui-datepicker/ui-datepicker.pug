@@ -1,6 +1,6 @@
-mixin page-title(pageTitle, mods)
+mixin ui-datepicker(title, mods)
   -
-    const baseName = 'page-title';
+    const baseName = 'ui-datepicker';
     let allMods = '';
     if (typeof (mods) !== 'undefined' && mods) {
       const modsList = mods.split(',');
@@ -10,5 +10,6 @@ mixin page-title(pageTitle, mods)
       }
     }
 
-  h1.page-title(class=allMods)&attributes(attributes)=pageTitle
-    block
+  .ui-datepicker(class=allMods)&attributes(attributes)
+    +ui-input('datepicker' + mods, title, 'ui-datepicker')(readonly)
+      +icon('icon_calendar')

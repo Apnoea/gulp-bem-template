@@ -1,28 +1,25 @@
 mixin breadcrumbs(mods)
   -
-    var baseName = 'breadcrumbs';
-    var allMods = '';
-      if(typeof(mods) !== 'undefined' && mods) {
-        var modsList = mods.split(',');
-        for (var i = 0; i < modsList.length; i++) {
-          if (modsList[i].trim()[0] == '-') {
-            allMods = allMods + baseName + modsList[i].trim() + ' ';
-          } else {
-            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
-          }
-        }
+    const baseName = 'breadcrumbs';
+    let allMods = '';
+    if (typeof (mods) !== 'undefined' && mods) {
+      const modsList = mods.split(',');
+      for (const element of modsList) {
+        allMods = allMods + ' '
+        allMods = element.trim()[0] === '-' ? allMods + baseName + element.trim() : allMods + element.trim() + '__' + baseName
       }
+    }
 
   ul.breadcrumbs(class=allMods)&attributes(attributes)
     block
 
 mixin breadcrumbs-item(text, href, mods)
   -
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' breadcrumbs__item--' + modsList[i].trim();
+    let allMods = ''
+    if (typeof (mods) !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods = allMods + ' breadcrumbs__item--' + element.trim()
       }
     }
 

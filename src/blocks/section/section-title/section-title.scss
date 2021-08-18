@@ -1,15 +1,12 @@
 .section-title {
   margin-bottom: 20px;
+  padding-bottom: 10px;
   font: 28px/1.1 $font;
   @include media-laptop {
     font-size: 24px;
   }
   @include media-tablet {
     font-size: 18px;
-  }
-  &__text {
-    margin-bottom: inherit;
-    font: inherit;
   }
   &--mt {
     margin-top: 20px;

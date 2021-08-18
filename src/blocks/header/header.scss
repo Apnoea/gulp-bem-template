@@ -25,7 +25,7 @@
     @include media-laptop {
       margin-left: 100px;
     }
-    @include media-tablet-horizontal {
+    @include media-tablet {
       display: none;
     }
     &__item {

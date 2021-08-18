@@ -6,7 +6,7 @@ const scripts = require('./scripts')
 const pug2html = require('./pug2html')
 const server = require('browser-sync')
 
-module.exports = function serve(cb) {
+module.exports = function serve(callback) {
   server.init({
     server: 'build',
     notify: false,
@@ -19,5 +19,5 @@ module.exports = function serve(cb) {
   gulp.watch('src/**/*.js', gulp.parallel(scripts))
   gulp.watch('src/**/*.pug', gulp.parallel(pug2html))
 
-  return cb()
+  return callback()
 }

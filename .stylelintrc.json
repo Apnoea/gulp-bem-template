@@ -9,26 +9,26 @@
     "stylelint-config-htmlacademy"
   ],
   "rules": {
-    "indentation": 2,
-    "at-rule-no-vendor-prefix": true,
     "at-rule-empty-line-before": ["always", {
       "except": ["after-same-name", "inside-block"]
     }],
+    "at-rule-name-case": "lower",
+    "at-rule-name-space-after": "always",
+    "at-rule-no-vendor-prefix": true,
+    "at-rule-semicolon-newline-after": "always",
+    "at-rule-semicolon-space-before": "never",
+    "block-closing-brace-newline-before": "always",
+    "block-closing-brace-newline-after": "always",
+    "color-hex-length": "short",
+    "indentation": 2,
+    "max-nesting-depth": null,
+    "no-descending-specificity": null,
     "rule-empty-line-before": ["always", {
       "except": ["after-rule", "after-single-line-comment", "inside-block", "first-nested"]
     }],
-    "color-hex-length": "short",
-    "scss/selector-no-redundant-nesting-selector": true,
     "scss/at-import-partial-extension": "never",
-    "block-closing-brace-newline-before": "always",
-    "block-closing-brace-newline-after": "always",
-    "no-descending-specificity": null,
-    "at-rule-name-case": "lower",
-    "at-rule-name-space-after": "always",
-    "at-rule-semicolon-newline-after": "always",
-    "at-rule-semicolon-space-before": "never",
+    "scss/selector-no-redundant-nesting-selector": true,
     "string-quotes": "single",
-    "max-nesting-depth": null,
     "unit-allowed-list": [
       "em",
       "rem",

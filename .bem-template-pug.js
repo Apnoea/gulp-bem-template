@@ -1,6 +1,10 @@
-mixin page-title(pageTitle, mods)
+var EOL = require('os').EOL
+
+module.exports = function (entity, naming) {
+  return [
+  `mixin ${naming.stringify(entity)}(mods)
   -
-    const baseName = 'page-title';
+    const baseName = '${naming.stringify(entity)}';
     let allMods = '';
     if (typeof (mods) !== 'undefined' && mods) {
       const modsList = mods.split(',');
@@ -10,5 +14,7 @@ mixin page-title(pageTitle, mods)
       }
     }
 
-  h1.page-title(class=allMods)&attributes(attributes)=pageTitle
-    block
+  .${naming.stringify(entity)}(class=allMods)&attributes(attributes)
+    block`
+  ].join(EOL)
+}

@@ -1,7 +1,7 @@
 .breadcrumbs {
   display: flex;
   align-items: center;
-  @include media-tablet-horizontal {
+  @include media-tablet {
     overflow-y: auto;
   }
   &__item {

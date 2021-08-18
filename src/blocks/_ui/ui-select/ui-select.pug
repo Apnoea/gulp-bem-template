@@ -1,6 +1,6 @@
-mixin page-title(pageTitle, mods)
+mixin ui-select(mods, ...data)
   -
-    const baseName = 'page-title';
+    const baseName = 'ui-select';
     let allMods = '';
     if (typeof (mods) !== 'undefined' && mods) {
       const modsList = mods.split(',');
@@ -10,5 +10,7 @@ mixin page-title(pageTitle, mods)
       }
     }
 
-  h1.page-title(class=allMods)&attributes(attributes)=pageTitle
-    block
+  .ui-select(class=allMods)&attributes(attributes)
+    select
+      each item in data
+        option=item

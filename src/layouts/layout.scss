@@ -55,7 +55,6 @@ blockquote {
 // defaults
 .wrapper {
   position: relative;
-  max-width: 1920px;
   min-height: 100vh;
   margin: 0 auto;
   font-family: $font;
@@ -63,14 +62,11 @@ blockquote {
   .inner {
     max-width: 1340px;
     margin: 0 auto;
+    padding: 0 25px;
     @include media-laptop {
-      max-width: 980px;
-    }
-    @include media-tablet-horizontal {
-      max-width: 760px;
+      max-width: 100%;
     }
     @include media-tablet {
-      max-width: 100%;
       padding: 0 10px;
     }
   }

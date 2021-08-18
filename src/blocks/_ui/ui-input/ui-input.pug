@@ -1,6 +1,6 @@
-mixin page-title(pageTitle, mods)
+mixin ui-input(id, text, mods, type)
   -
-    const baseName = 'page-title';
+    const baseName = 'ui-input';
     let allMods = '';
     if (typeof (mods) !== 'undefined' && mods) {
       const modsList = mods.split(',');
@@ -10,5 +10,6 @@ mixin page-title(pageTitle, mods)
       }
     }
 
-  h1.page-title(class=allMods)&attributes(attributes)=pageTitle
-    block
+  .ui-input(class=allMods)
+    input(id=id type=(typeof(type) !== 'undefined' && type ? type : 'text'))&attributes(attributes)
+    label(for=id)=text

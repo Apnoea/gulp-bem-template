@@ -2,16 +2,22 @@
   position: relative;
   textarea {
     width: 100%;
-    padding: 16px 20px 13px;
+    padding: 15px 20px;
     font: 16px/1.5 $font;
     background: #fff;
-    border: 1px solid transparent;
+    border: 1px solid $teal;
     border-radius: 6px;
     outline: 0;
     resize: none;
     &.parsley-error {
       border-color: $orange;
     }
+  }
+  &__counter {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font: 12px/1 $font;
   }
   .parsley-errors-list {
     position: absolute;

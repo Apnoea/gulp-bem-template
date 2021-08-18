@@ -1,6 +1,6 @@
-mixin page-title(pageTitle, mods)
+mixin section-title(sectionTitle, mods)
   -
-    const baseName = 'page-title';
+    const baseName = 'section-title';
     let allMods = '';
     if (typeof (mods) !== 'undefined' && mods) {
       const modsList = mods.split(',');
@@ -10,5 +10,5 @@ mixin page-title(pageTitle, mods)
       }
     }
 
-  h1.page-title(class=allMods)&attributes(attributes)=pageTitle
+  h2.section-title(class=allMods)&attributes(attributes)=sectionTitle
     block

@@ -1,28 +1,25 @@
 mixin gallery(mods)
   -
-    var baseName = 'gallery';
-    var allMods = '';
-      if(typeof(mods) !== 'undefined' && mods) {
-        var modsList = mods.split(',');
-        for (var i = 0; i < modsList.length; i++) {
-          if (modsList[i].trim()[0] == '-') {
-            allMods = allMods + baseName + modsList[i].trim() + ' ';
-          } else {
-            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
-          }
-        }
+    const baseName = 'gallery';
+    let allMods = '';
+    if (typeof (mods) !== 'undefined' && mods) {
+      const modsList = mods.split(',');
+      for (const element of modsList) {
+        allMods = allMods + ' '
+        allMods = element.trim()[0] === '-' ? allMods + baseName + element.trim() : allMods + element.trim() + '__' + baseName
       }
+    }
 
   .gallery(class=allMods)&attributes(attributes)
     block
 
 mixin gallery-item(src, mods)
   -
-    var allMods = '';
-      if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' gallery__item--' + modsList[i].trim();
+    let allMods = ''
+    if (typeof (mods) !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods = allMods + ' gallery__item--' + element.trim()
       }
     }
 

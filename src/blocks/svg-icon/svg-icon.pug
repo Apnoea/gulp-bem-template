@@ -1,4 +1,15 @@
-mixin icon(iconName)
+mixin icon(iconName, mods)
+  -
+    const baseName = 'svg-icon';
+    let allMods = '';
+    if (typeof (mods) !== 'undefined' && mods) {
+      const modsList = mods.split(',');
+      for (const element of modsList) {
+        allMods = allMods + ' '
+        allMods = element.trim()[0] === '-' ? allMods + baseName + element.trim() : allMods + element.trim() + '__' + baseName
+      }
+    }
+
   -mod = mod || ''
-    svg.svg-icon(class=iconName)
-      use(xlink:href="img/sprite.svg#" + iconName)
+    svg.svg-icon(class=allMods, class='svg-icon--' + iconName)&attributes(attributes)
+      use(xlink:href='img/sprite.svg#' + iconName)

@@ -1,5 +1,6 @@
 import Inputmask from 'inputmask'
 import 'parsleyjs'
+import 'parsleyjs/dist/i18n/ru'
 
 function inputMask() {
   Inputmask({

@@ -15,8 +15,14 @@
     "htmlacademy/vanilla"
   ],
   "rules": {
+    "comma-dangle": ["error", "never"],
+    "id-length": ["error", { "exceptions": ["$"] }],
     "import/no-named-as-default": "off",
     "indent": ["error", 2],
+    "no-console": "error",
+    "no-unused-vars": "off",
+    "prefer-arrow-callback": "off",
+    "semi": ["error", "never"],
     "space-before-function-paren": [
       "error",
       {
@@ -25,12 +31,6 @@
         "asyncArrow": "never"
       }
     ],
-    "comma-dangle": ["error", "never"],
-    "no-unused-vars": "off",
-    "no-console": "error",
-    "semi": ["error", "never"],
-    "quotes": ["error", "single"],
-    "prefer-arrow-callback": "off",
-    "id-length": ["error", { "exceptions": ["$"] }]
+    "quotes": ["error", "single"]
   }
 }

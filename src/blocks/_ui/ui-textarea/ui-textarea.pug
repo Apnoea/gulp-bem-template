@@ -1,6 +1,6 @@
-mixin page-title(pageTitle, mods)
+mixin ui-textarea(mods)
   -
-    const baseName = 'page-title';
+    const baseName = 'ui-textarea';
     let allMods = '';
     if (typeof (mods) !== 'undefined' && mods) {
       const modsList = mods.split(',');
@@ -10,5 +10,6 @@ mixin page-title(pageTitle, mods)
       }
     }
 
-  h1.page-title(class=allMods)&attributes(attributes)=pageTitle
-    block
+  .ui-textarea(class=allMods)
+    textarea()&attributes(attributes)
+    .ui-textarea__counter

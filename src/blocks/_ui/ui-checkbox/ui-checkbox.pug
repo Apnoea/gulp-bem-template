@@ -1,6 +1,6 @@
-mixin page-title(pageTitle, mods)
+mixin ui-checkbox(id, text, mods)
   -
-    const baseName = 'page-title';
+    const baseName = 'ui-checkbox';
     let allMods = '';
     if (typeof (mods) !== 'undefined' && mods) {
       const modsList = mods.split(',');
@@ -10,5 +10,8 @@ mixin page-title(pageTitle, mods)
       }
     }
 
-  h1.page-title(class=allMods)&attributes(attributes)=pageTitle
-    block
+  .ui-checkbox(class=allMods)&attributes(attributes)
+    label(for=id)
+      input(id=id type='checkbox' name=id)
+      span!=text
+        block
