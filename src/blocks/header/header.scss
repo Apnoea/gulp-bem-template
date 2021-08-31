@@ -5,18 +5,16 @@
     justify-content: space-between;
     align-items: center;
   }
-  &-logo {
-    a {
-      width: 220px;
-      height: 50px;
-      @include media-laptop {
-        width: 170px;
-        height: 40px;
-      }
-      @include media-tablet {
-        width: 110px;
-        height: 25px;
-      }
+  &__logo {
+    width: 220px;
+    height: 50px;
+    @include media-laptop {
+      width: 170px;
+      height: 40px;
+    }
+    @include media-tablet {
+      width: 110px;
+      height: 25px;
     }
   }
   &-menu {

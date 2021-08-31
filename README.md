@@ -1,9 +1,8 @@
 # gulp-bem-template
 
 ## Установка
-* установите [Node.js](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install)
+* установите [Node.js](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install): ```npm install --global yarn```
 * скачайте сборку в консоли с помощью [Git](https://git-scm.com/downloads): ```git clone https://github.com/Apnoea/gulp-bem-template.git```
-* установите ```gulp``` глобально: ```yarn global add gulp-cli```
 * перейдите в скачанную папку со сборкой: ```cd gulp-bem-template```
 * скачайте необходимые зависимости: ```yarn```
 * чтобы начать работу, введите команду: ```yarn start``` (режим разработки)
@@ -19,17 +18,21 @@ gulp-bem-template
 ├── build
 ├── gulp-tasks
 ├── src
+│   ├── blocks
 │   ├── fonts
 │   ├── images
 │   ├── js
-│   ├── pages
+│   ├── layouts
 │   └── styles
+├── .bem-template-pug.js
+├── .bem-template-scss.js
 ├── .bemrc.js
 ├── .editorconfig
 ├── .eslintignore
 ├── .eslintrc.json
 ├── .gitattributes
 ├── .gitignore
+├── .gitlab-ci.yml
 ├── .pug-lint.json
 ├── .stylelintrc.json
 ├── gulpfile.js
@@ -57,8 +60,8 @@ gulp-bem-template
 ## Рекомендации по использованию
 ### Блоки проекта
 * блоки проекта находятся в папке ```src/blocks```
-  * новые блоки подключаем в файле: ```src/blocks/mixins.pug```
-* каталог блока содержит в себе файлы стилей и, по необходимости, скриптов
+  * блоки, созданные командой ```yarn bem```, автоматически подключаются в файл: ```src/blocks/mixins.pug```
+* каталог блока содержит в себе файлы разметки, стилей и, по необходимости, скриптов
 
 ### Страницы проекта
 * страницы проекта находятся в корне папки ```src/*.pug```

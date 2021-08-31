@@ -22,5 +22,6 @@ html(lang='ru')
       script(src='https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js')
       script.
         svg4everybody();
-      script(src='js/vendors.js')
+      if process.env.NODE_ENV === 'development'
+        script(src='js/vendors.js')
       script(src='js/scripts.js')

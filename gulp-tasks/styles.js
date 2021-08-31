@@ -22,7 +22,6 @@ module.exports = function styles() {
     .pipe(autoprefixer({ cascade: false, grid: true }))
     .pipe(cleanCSS({ compatibility: '*', level: 2 }))
     .pipe(rename({ dirname: 'css', suffix: '.min' }))
-    .pipe(plumber.stop())
     .pipe(gulp.dest('build'))
     .pipe(browsersync.stream())
 }

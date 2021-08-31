@@ -23,5 +23,5 @@ module.exports = function pug2html() {
     .pipe(pug({ pretty: true }))
     .pipe(htmlValidator())
     .pipe(gulp.dest('build'))
-    .pipe(browsersync.stream())
+    .on('end', browsersync.reload)
 }

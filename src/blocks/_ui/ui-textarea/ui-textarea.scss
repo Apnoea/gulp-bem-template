@@ -18,6 +18,7 @@
     right: 10px;
     bottom: 10px;
     font: 12px/1 $font;
+    pointer-events: none;
   }
   .parsley-errors-list {
     position: absolute;

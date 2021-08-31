@@ -24,9 +24,8 @@
 
 header.header
   .inner
-    .header-logo
-      a(href='/')
-        +icon('icon_logo')
+    a.header__logo(href='/')
+      +icon('icon_logo')
     .header-menu
       each headerMenuItem, index in headerMenu
         .header-menu__item

@@ -6,7 +6,7 @@ const browsersync = require('browser-sync')
 
 module.exports = function images() {
   return gulp.src('src/images/**/*.{gif,png,jpg,webp}')
-    .pipe(cached('imgCache'))
+    .pipe(cached('imagesCache'))
     .pipe(imagemin([
       imageminPngquant({ quality: [0.75, 0.75] }),
       imagemin.gifsicle({ interlaced: true }),
