@@ -1,31 +1,52 @@
 .ui-datepicker {
-  .ui-input {
-    &:hover {
-      .icon_calendar {
-        color: $teal;
-      }
-    }
-    input {
-      padding-right: 40px;
-      cursor: pointer;
-      &.filled ~ .icon_calendar,
-      &:focus ~ .icon_calendar {
-        color: $teal;
-      }
-    }
+  position: relative;
+  &:hover {
     .icon_calendar {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      width: 18px;
-      height: 20px;
-      transform: translateY(-50%);
       color: $teal;
-      transition: 0.3s ease;
-      pointer-events: none;
-      @include media-tablet {
-        right: 15px;
-      }
+    }
+  }
+  input {
+    width: 100%;
+    padding: 16px 40px 13px 20px;
+    font: 16px/1.5 $font;
+    background: #fff;
+    border: 1px solid $teal;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    &.filled ~ label,
+    &:focus ~ label {
+      top: 2px;
+      transform: translateY(0%);
+      font-size: 10px;
+    }
+    &.filled ~ .svg-icon--icon_calendar,
+    &:focus ~ .svg-icon--icon_calendar {
+      color: $teal;
+    }
+  }
+  label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font: 16px/1.5 $font;
+    color: #b2b2b2;
+    transition: 0.3s ease;
+    pointer-events: none;
+  }
+  .svg-icon--icon_calendar {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 18px;
+    height: 20px;
+    transform: translateY(-50%);
+    color: $teal;
+    transition: 0.3s ease;
+    pointer-events: none;
+    @include media-tablet {
+      right: 15px;
     }
   }
   &--range {
@@ -49,9 +70,6 @@
   border: 0;
   border-radius: 16px;
   box-shadow: 4px 10px 16px rgba(169, 164, 181, 0.2);
-  &.arrowBottom {
-    margin-top: -10px;
-  }
   .flatpickr-months {
     position: relative;
     height: 50px;

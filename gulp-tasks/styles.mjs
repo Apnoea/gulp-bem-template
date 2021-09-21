@@ -1,15 +1,18 @@
-const gulp = require('gulp')
-const plumber = require('gulp-plumber')
-const gulpStylelint = require('gulp-stylelint')
-const filter = require('gulp-filter')
-const sassGlob = require('gulp-sass-glob')
-const sass = require('gulp-sass')(require('sass'))
-const autoprefixer = require('gulp-autoprefixer')
-const rename = require('gulp-rename')
-const cleanCSS = require('gulp-clean-css')
-const browsersync = require('browser-sync')
+import gulp from 'gulp'
+import plumber from 'gulp-plumber'
+import gulpStylelint from 'gulp-stylelint'
+import filter from 'gulp-filter'
+import sassGlob from 'gulp-sass-glob'
+import dartSass from 'sass'
+import gulpSass from 'gulp-sass'
+import autoprefixer from 'gulp-autoprefixer'
+import rename from 'gulp-rename'
+import cleanCSS from 'gulp-clean-css'
+import browsersync from 'browser-sync'
 
-module.exports = function styles() {
+const sass = gulpSass(dartSass)
+
+export default function styles() {
   return gulp.src('src/**/*.scss')
     .pipe(plumber())
     .pipe(gulpStylelint({

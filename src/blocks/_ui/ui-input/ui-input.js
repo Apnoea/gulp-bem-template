@@ -1,4 +1,4 @@
-import Inputmask from 'inputmask'
+import IMask from 'imask'
 import 'parsleyjs'
 import 'parsleyjs/dist/i18n/ru'
 
@@ -9,25 +9,25 @@ export default function uiInput() {
 }
 
 function inputMask() {
-  Inputmask({
-    mask: '+7 (999) 999-99-99',
-    showMaskOnHover: false
-  }).mask('#phone')
+  const inputMaskItem = document.querySelector('#phone')
+  if (inputMaskItem) {
+    IMask(inputMaskItem, {
+      mask: '+{7} (000) 000-00-00',
+      lazy: false
+    })
+  }
 }
 
 function checkInputFill() {
   const uiInputs = document.querySelectorAll('.ui-input')
   if (uiInputs) {
-    uiInputs.forEach(function (element) {
-      const uiInput = element.querySelector('input')
-      toggleClassFilled(uiInput)
-      uiInput.addEventListener('input', function () {
-        toggleClassFilled(uiInput)
+    for (const element of uiInputs) {
+      const input = element.querySelector('input')
+      input.value !== '' ? input.classList.add('filled') : input.classList.remove('filled')
+      input.addEventListener('input', function () {
+        input.value !== '' ? input.classList.add('filled') : input.classList.remove('filled')
       })
-    })
-  }
-  function toggleClassFilled(input) {
-    input.value !== '' ? input.classList.add('filled') : input.classList.remove('filled')
+    }
   }
 }
 

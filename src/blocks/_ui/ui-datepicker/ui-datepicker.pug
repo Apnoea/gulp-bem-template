@@ -1,15 +1,17 @@
 mixin ui-datepicker(title, mods)
   -
-    const baseName = 'ui-datepicker';
-    let allMods = '';
-    if (typeof (mods) !== 'undefined' && mods) {
-      const modsList = mods.split(',');
+    const baseName = 'ui-datepicker'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
       for (const element of modsList) {
-        allMods = allMods + ' '
-        allMods = element.trim()[0] === '-' ? allMods + baseName + element.trim() : allMods + element.trim() + '__' + baseName
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
       }
+      allMods = allMods.trim()
     }
+    let randomId = Math.random().toString(36).replace(/[^a-z0-9]+/g, '').substr(0, 7);
 
   .ui-datepicker(class=allMods)&attributes(attributes)
-    +ui-input('datepicker' + mods, title, 'ui-datepicker')(readonly)
-      +icon('icon_calendar')
+    input(id=randomId readonly)
+    label(for=randomId)=title
+    +icon('icon_calendar')

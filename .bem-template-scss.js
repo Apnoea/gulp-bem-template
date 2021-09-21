@@ -1,4 +1,4 @@
-var EOL = require('os').EOL
+const EOL = require('os').EOL
 
 module.exports = function (entity, naming) {
   return [

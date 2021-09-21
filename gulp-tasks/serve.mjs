@@ -1,14 +1,14 @@
-const gulp = require('gulp')
-const fonts = require('./fonts')
-const images = require('./images')
-const svgs = require('./svgs')
-const pugMixins = require('./pugMixins')
-const pug2html = require('./pug2html')
-const styles = require('./styles')
-const scripts = require('./scripts')
-const server = require('browser-sync')
+import gulp from 'gulp'
+import fonts from './fonts.mjs'
+import images from './images.mjs'
+import svgs from './svgs.mjs'
+import pugMixins from './pugMixins.mjs'
+import pug2html from './pug2html.mjs'
+import styles from './styles.mjs'
+import scripts from './scripts.mjs'
+import server from 'browser-sync'
 
-module.exports = function serve(callback) {
+export default function serve(callback) {
   server.init({
     server: 'build',
     notify: false,

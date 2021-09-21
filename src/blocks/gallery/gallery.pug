@@ -1,13 +1,13 @@
 mixin gallery(mods)
   -
-    const baseName = 'gallery';
-    let allMods = '';
-    if (typeof (mods) !== 'undefined' && mods) {
-      const modsList = mods.split(',');
+    const baseName = 'gallery'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
       for (const element of modsList) {
-        allMods = allMods + ' '
-        allMods = element.trim()[0] === '-' ? allMods + baseName + element.trim() : allMods + element.trim() + '__' + baseName
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
       }
+      allMods = allMods.trim()
     }
 
   .gallery(class=allMods)&attributes(attributes)
@@ -16,10 +16,10 @@ mixin gallery(mods)
 mixin gallery-item(src, mods)
   -
     let allMods = ''
-    if (typeof (mods) !== 'undefined' && mods) {
+    if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
       for (const element of modsList) {
-        allMods = allMods + ' gallery__item--' + element.trim()
+        allMods += ' gallery__item--' + element.trim()
       }
     }
 

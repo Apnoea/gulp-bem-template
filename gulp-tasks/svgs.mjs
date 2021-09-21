@@ -1,8 +1,8 @@
-const gulp = require('gulp')
-const svg = require('gulp-svg-sprite')
-const browsersync = require('browser-sync')
+import gulp from 'gulp'
+import svg from 'gulp-svg-sprite'
+import browsersync from 'browser-sync'
 
-module.exports = function svgs() {
+export default function svgs() {
   return gulp.src('src/images/**/*.svg')
     .pipe(svg({
       shape: {

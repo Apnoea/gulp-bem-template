@@ -1,13 +1,13 @@
 mixin breadcrumbs(mods)
   -
-    const baseName = 'breadcrumbs';
-    let allMods = '';
-    if (typeof (mods) !== 'undefined' && mods) {
-      const modsList = mods.split(',');
+    const baseName = 'breadcrumbs'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
       for (const element of modsList) {
-        allMods = allMods + ' '
-        allMods = element.trim()[0] === '-' ? allMods + baseName + element.trim() : allMods + element.trim() + '__' + baseName
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
       }
+      allMods = allMods.trim()
     }
 
   ul.breadcrumbs(class=allMods)&attributes(attributes)
@@ -16,10 +16,10 @@ mixin breadcrumbs(mods)
 mixin breadcrumbs-item(text, href, mods)
   -
     let allMods = ''
-    if (typeof (mods) !== 'undefined' && mods) {
+    if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
       for (const element of modsList) {
-        allMods = allMods + ' breadcrumbs__item--' + element.trim()
+        allMods += ' breadcrumbs__item--' + element.trim()
       }
     }
 

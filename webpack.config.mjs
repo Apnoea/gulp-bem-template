@@ -1,14 +1,15 @@
-const path = require('path')
-const webpack = require('webpack')
+import path from 'node:path'
+import url from 'node:url'
+import webpack from 'webpack'
 
-module.exports = {
+export default {
   mode: process.env.NODE_ENV,
   entry: {
-    main: path.resolve(__dirname, './src/js/index.js')
+    scripts: path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), './src/js/index.js')
   },
   output: {
-    path: path.resolve(__dirname, './build/js'),
-    filename: 'scripts.js',
+    path: path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), './build/js'),
+    filename: '[name].js',
     chunkFilename: '[name].js'
   },
   plugins: [

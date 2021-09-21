@@ -1,13 +1,13 @@
 mixin section-title(sectionTitle, mods)
   -
-    const baseName = 'section-title';
-    let allMods = '';
-    if (typeof (mods) !== 'undefined' && mods) {
-      const modsList = mods.split(',');
+    const baseName = 'section-title'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
       for (const element of modsList) {
-        allMods = allMods + ' '
-        allMods = element.trim()[0] === '-' ? allMods + baseName + element.trim() : allMods + element.trim() + '__' + baseName
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
       }
+      allMods = allMods.trim()
     }
 
   h2.section-title(class=allMods)&attributes(attributes)=sectionTitle
