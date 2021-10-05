@@ -1,4 +1,5 @@
 .footer {
+  flex: 0 1;
   padding: 20px 0;
   .inner {
     display: flex;
@@ -16,7 +17,7 @@
       height: 25px;
     }
   }
-  &-menu {
+  &__menu {
     display: flex;
     justify-content: space-between;
     width: 50%;
@@ -30,26 +31,17 @@
       margin-top: 20px;
       margin-bottom: 30px;
     }
-    &__item {
-      @include media-laptop {
-        width: 50%;
-        margin-top: 30px;
-      }
-      &:nth-child(-n + 2) {
-        margin-top: 0;
-      }
-    }
-    &__title {
-      text-transform: uppercase;
-      font: 16px/1.5 $font;
-      @include media-tablet {
-        font-size: 13px;
-      }
+  }
+  &__link {
+    text-transform: uppercase;
+    font: 16px/1.5 $font;
+    @include media-tablet {
+      font-size: 13px;
     }
   }
-  &-list {
+  &__list {
     margin-top: 13px;
-    &__name {
+    .footer__item {
       margin-top: 10px;
       font: 300 16px/1.5 $font;
       color: #000;
@@ -61,8 +53,9 @@
         margin-top: 0;
       }
     }
-    &__link {
-      display: inline;
+    .footer__link {
+      text-transform: none;
+      font-weight: 300;
     }
   }
 }

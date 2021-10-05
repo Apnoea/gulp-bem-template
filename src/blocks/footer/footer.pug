@@ -1,29 +1,29 @@
 -
   let footerMenu =[
-    { title: 'Self storage',
-      item: [
-      { name: 'Why SmartBox', link: 'smartbox.html' },
-      { name: 'About SmartBox', link: 'smartbox.html' },
-      { name: 'FAQ', link: 'faq.html' }
+    { title: 'Title 1',
+      list: [
+      { name: 'Link 1', link: '#' },
+      { name: 'Link 2', link: '#' },
+      { name: 'Link 3', link: '#' }
     ]},
-    { title: 'Discover',
-      item: [
-      { name: 'Booking', link: 'booking.html' },
-      { name: 'Contact', link: 'contacts.html' }
+    { title: 'Title 2',
+      list: [
+      { name: 'Link 1', link: '#' },
+      { name: 'Link 2', link: '#' }
     ]},
-    { title: 'Services',
-      item: [
-      { name: 'Unit calculator', link: 'services.html' },
-      { name: 'Transportation', link: 'services.html' },
-      { name: 'Shelving', link: 'services.html' },
-      { name: 'Packing materials', link: 'services.html' },
-      { name: 'Insurange', link: 'services.html' }
+    { title: 'Title 3',
+      list: [
+      { name: 'Link 1', link: '#' },
+      { name: 'Link 2', link: '#' },
+      { name: 'Link 3', link: '#' },
+      { name: 'Link 4', link: '#' },
+      { name: 'Link 5', link: '#' }
     ]},
-    { title: 'General',
-      item: [
-      { name: 'News', link: 'news.html' },
-      { name: 'Gallery', link: 'gallery.html' },
-      { name: 'Team', link: 'team.html' }
+    { title: 'Title 4',
+      list: [
+      { name: 'Link 1', link: '#' },
+      { name: 'Link 2', link: '#' },
+      { name: 'Link 3', link: '#' }
     ]}
   ]
 
@@ -31,11 +31,11 @@ footer.footer
   .inner
     a.footer__logo(href='/')
       +icon('icon_logo')
-    .footer-menu
+    .footer__menu
       each footerMenuItem in footerMenu
-        .footer-menu__item
-          .footer-menu__title=footerMenuItem.title
-          ul.footer-list
-            each footerMenuItemName, index in footerMenuItem.item
-              li.footer-list__name
-                a.footer-list__link(href=footerMenuItemName.link)=footerMenuItemName.name
+        .footer__item
+          .footer__link=footerMenuItem.title
+          ul.footer__list
+            each footerMenuItemName, index in footerMenuItem.list
+              li.footer__item
+                a.footer__link(href=footerMenuItemName.link)=footerMenuItemName.name

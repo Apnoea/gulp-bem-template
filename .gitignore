@@ -13,3 +13,6 @@ node_modules/
 
 # Папка с собранными файлами проекта
 build/
+
+# Генерируемые файлы
+src/blocks/mixins.pug

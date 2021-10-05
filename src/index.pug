@@ -1,10 +1,12 @@
 extends layouts/layout
 
 block variables
-  -const pageTitle ='Main'
+  -const pageTitle ='Index'
 
 block content
-  main.page-content
+  main
     .inner
       +page-title(pageTitle)
       a(href='blocks.html') Repository blocks
+      br
+      a(href='main.html') Main

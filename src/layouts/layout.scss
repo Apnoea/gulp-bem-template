@@ -55,6 +55,8 @@ blockquote {
 // defaults
 .wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   margin: 0 auto;
   font-family: $font;
@@ -70,8 +72,8 @@ blockquote {
       padding: 0 10px;
     }
   }
-  .page-content {
-    padding-top: 50px;
-    padding-bottom: 70px;
+  main {
+    flex: 1 0;
+    padding: 50px 0 70px;
   }
 }

@@ -1,42 +1,39 @@
 -
   let headerMenu =[
-    { title: 'Services',
-      item: [
-        { name: 'Unit Calculator', link: 'services.html' },
-        { name: 'Transportation', link: 'services.html' },
-        { name: 'Shelving', link: 'services.html' },
-        { name: 'Packing materials', link: 'services.html' },
-        { name: 'Insurance', link: 'services.html' }
+    { title: 'Title 1',
+      list: [
+        { name: 'Link 1', link: '#' },
+        { name: 'Link 2', link: '#' },
+        { name: 'Link 3', link: '#' },
+        { name: 'Link 4', link: '#' },
+        { name: 'Link 5', link: '#' }
       ]
     },
-    { title: 'Prices', link: 'prices.html' },
-    { title: 'About us',
-      item: [
-        { name: 'SmartBox', link: 'smartbox.html' },
-        { name: 'Team', link: 'team.html' },
-        { name: 'News', link: 'news.html' },
-        { name: 'Gallery', link: 'gallery.html' },
-        { name: 'Contacts', link: 'contacts.html' }
+    { title: 'Title 2', link: 'prices.html' },
+    { title: 'Title 3',
+      list: [
+        { name: 'Link 1', link: '#' },
+        { name: 'Link 2', link: '#' },
+        { name: 'Link 3', link: '#' },
+        { name: 'Link 4', link: '#' },
+        { name: 'Link 5', link: '#' }
       ]
     },
-    { title: 'FAQ', link: 'faq.html' }
+    { title: 'Title 4', link: 'faq.html' }
   ]
 
 header.header
   .inner
     a.header__logo(href='/')
       +icon('icon_logo')
-    .header-menu
-      each headerMenuItem, index in headerMenu
-        .header-menu__item
-          case index
-            when 1
-            when 3
-              .header-menu__title
-                a.header-menu__link(href=headerMenuItem.link)=headerMenuItem.title
-            default
-              .header-menu__title.header-menu__title--arrow=headerMenuItem.title
-              ul.header-list
-                each headerMenuItemName in headerMenuItem.item
-                  li.header-list__name
-                    a.header-list__link(href=headerMenuItemName.link)=headerMenuItemName.name
+    ul.header__menu
+      each headerMenuItem in headerMenu
+        li.header__item
+          if headerMenuItem.list
+            .header__link.header__link--arrow=headerMenuItem.title
+            ul.header__list
+              each headerMenuItemLink in headerMenuItem.list
+                li.header__item
+                  a.header__link(href=headerMenuItemLink.link)=headerMenuItemLink.name
+          else
+            a.header__link(href=headerMenuItem.link)=headerMenuItem.title

@@ -10,6 +10,5 @@ mixin icon(iconName, mods)
       allMods = allMods.trim()
     }
 
-  -mod = mod || ''
-    svg.svg-icon(class=allMods, class='svg-icon--' + iconName)&attributes(attributes)
-      use(xlink:href='img/sprite.svg#' + iconName)
+  svg.svg-icon(class=allMods, class='svg-icon--' + iconName)&attributes(attributes)
+    use(xlink:href='img/sprite.svg#' + iconName)

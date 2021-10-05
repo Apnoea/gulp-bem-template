@@ -1,6 +1,6 @@
 {
   "name": "gulp-bem-template",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "simple bem pug+scss template",
   "author": "Alexey Kozyutenko",
   "license": "MIT",
@@ -29,7 +29,7 @@
     "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "eslint": "^7.32.0",
-    "eslint-config-htmlacademy": "^4.0.2",
+    "eslint-config-htmlacademy": "^4.1.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
@@ -52,10 +52,10 @@
     "gulp-sass-glob": "^1.1.0",
     "gulp-stylelint": "^13.0.0",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-w3c-html-validator": "5.0.1",
+    "gulp-w3c-html-validator": "5.1.0",
     "imagemin-pngquant": "^9.0.2",
     "pug": "^3.0.2",
-    "sass": "^1.42.0",
+    "sass": "^1.42.1",
     "stylelint": "^13.13.1",
     "stylelint-config-htmlacademy": "^0.1.10",
     "stylelint-config-standard": "^22.0.0",
@@ -63,7 +63,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.20.1",
     "svg4everybody": "^2.1.9",
-    "webpack": "^5.53.0",
+    "webpack": "^5.56.1",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
@@ -76,7 +76,7 @@
     "nouislider": "^15.2.0",
     "parsleyjs": "^2.9.2",
     "select2": "^4.1.0-rc.0",
-    "swiper": "^7.0.6",
+    "swiper": "^7.0.8",
     "tooltipster": "^4.2.8"
   }
 }
