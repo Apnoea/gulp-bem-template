@@ -5,10 +5,10 @@
   ],
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-standard-scss",
-    "stylelint-config-htmlacademy"
+    "stylelint-config-standard-scss"
   ],
   "rules": {
+    "alpha-value-notation": "number",
     "at-rule-empty-line-before": ["always", {
       "except": ["after-same-name", "inside-block"]
     }],
@@ -20,7 +20,9 @@
     "block-closing-brace-newline-before": "always",
     "block-closing-brace-newline-after": "always",
     "color-hex-length": "short",
+    "font-family-name-quotes": "always-unless-keyword",
     "indentation": 2,
+    "max-empty-lines": 2,
     "max-nesting-depth": null,
     "no-descending-specificity": null,
     "rule-empty-line-before": ["always", {
@@ -28,6 +30,8 @@
     }],
     "scss/at-import-partial-extension": "never",
     "scss/selector-no-redundant-nesting-selector": true,
+    "scss/dollar-variable-pattern": null,
+    "selector-class-pattern": null,
     "string-quotes": "single",
     "unit-allowed-list": [
       "em",
@@ -67,6 +71,11 @@
           "background",
           "border",
           "border-radius"
+        ]
+      },
+      {
+        "properties": [
+          "opacity"
         ]
       }
     ]

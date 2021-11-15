@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import '@fancyapps/fancybox'
+import { Fancybox } from '@fancyapps/ui'
 import 'lazysizes'
 import noUiSlider from 'nouislider'
 import 'tooltipster'

@@ -22,7 +22,7 @@ export default function styles() {
     .pipe(filter('src/styles/style.scss'))
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({ cascade: false, grid: true }))
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(cleanCSS({ compatibility: '*', level: 2 }))
     .pipe(rename({ dirname: 'css', suffix: '.min' }))
     .pipe(gulp.dest('build'))
