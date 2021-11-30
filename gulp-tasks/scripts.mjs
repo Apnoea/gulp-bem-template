@@ -1,7 +1,7 @@
 import gulp from 'gulp'
 import webpack from 'webpack-stream'
 import webpackConfig from '../webpack.config.mjs'
-import eslint from 'gulp-eslint7'
+import eslint from 'gulp-eslint-new'
 import browsersync from 'browser-sync'
 
 export default function scripts() {

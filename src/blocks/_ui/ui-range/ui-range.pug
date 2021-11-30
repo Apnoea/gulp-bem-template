@@ -1,6 +1,6 @@
-mixin ui-textarea(mods)
+mixin ui-range(mods)
   -
-    const baseName = 'ui-textarea'
+    const baseName = 'ui-range'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,6 +10,9 @@ mixin ui-textarea(mods)
       allMods = allMods.trim()
     }
 
-  .ui-textarea(class=allMods)
-    textarea&attributes(attributes)
-    .ui-textarea__counter
+  .ui-range(class=allMods)&attributes(attributes)
+    .ui-range-body
+    .ui-range__wrap
+      .ui-range-value-lower
+      .ui-range-value-upper
+    block

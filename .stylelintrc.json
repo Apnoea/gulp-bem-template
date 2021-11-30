@@ -23,7 +23,6 @@
     "font-family-name-quotes": "always-unless-keyword",
     "indentation": 2,
     "max-empty-lines": 2,
-    "max-nesting-depth": null,
     "no-descending-specificity": null,
     "rule-empty-line-before": ["always", {
       "except": ["after-rule", "after-single-line-comment", "inside-block", "first-nested"]

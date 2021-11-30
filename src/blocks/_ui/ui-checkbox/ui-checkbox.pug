@@ -11,7 +11,6 @@ mixin ui-checkbox(id, text, mods)
     }
 
   .ui-checkbox(class=allMods)&attributes(attributes)
-    label(for=id)
-      input(id=id type='checkbox' name=id)
-      span!=text
-        block
+    input(id=id name=id type='checkbox')
+    label(for=id)!=text
+      block

@@ -8,9 +8,9 @@ export default function images() {
   return gulp.src('src/images/**/*.{gif,png,jpg,webp}')
     .pipe(cached('imagesCache'))
     .pipe(imagemin([
-      pngquant({ quality: [0.75, 0.75] }),
       gifsicle({ interlaced: true }),
-      mozjpeg({ quality: 75, progressive: true })
+      mozjpeg({ quality: 75, progressive: true }),
+      pngquant({ quality: [0.75, 0.75] })
     ]))
     .pipe(gulp.dest('build/img'))
     .on('end', browsersync.reload)

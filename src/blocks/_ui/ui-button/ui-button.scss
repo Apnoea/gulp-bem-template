@@ -1,40 +1,25 @@
 .ui-button {
   display: inline-block;
-  a,
-  button,
-  input {
-    width: 100%;
-    padding: 15px 50px;
-    text-align: center;
-    text-transform: uppercase;
-    color: $black;
-    background: #fff;
-    border: 1px solid $teal;
-    border-radius: 6px;
-    transition: 0.3s ease;
-    cursor: pointer;
-    @include media-laptop {
-      padding: 20.5px 50px;
-      font-size: 14px;
-    }
-    @include media-laptop {
-      padding: 14.5px 30px;
-      font-size: 13px;
-    }
-    &:hover {
-      color: $teal;
-    }
+  width: 250px;
+  padding: 15px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font: 16px/1.5 $font;
+  color: $black;
+  background: #fff;
+  border: 1px solid $teal;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    color: $teal;
   }
   &--filled {
-    a,
-    button,
-    input {
-      color: #fff;
-      background: $teal;
-      &:hover {
-        color: $teal;
-        background: #fff;
-      }
+    color: #fff;
+    background: $teal;
+    &:hover {
+      color: $teal;
+      background: #fff;
     }
   }
 }
