@@ -35,9 +35,9 @@ gulp-bem-template
 ├── .gitlab-ci.yml
 ├── .pug-lint.json
 ├── .stylelintrc.json
-├── gulpfile.js
+├── gulpfile.mjs
 ├── package.json
-└── webpack.config.js
+└── webpack.config.mjs
 ```
 
 * Папка ```build``` - папка, из которой запускается локальный сервер для разработки (при запуске ```yarn start```)
