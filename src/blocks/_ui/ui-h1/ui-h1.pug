@@ -1,6 +1,6 @@
-mixin page-title(pageTitle, mods)
+mixin ui-h1(text, mods)
   -
-    const baseName = 'page-title'
+    const baseName = 'ui-h1'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,5 @@ mixin page-title(pageTitle, mods)
       allMods = allMods.trim()
     }
 
-  h1.page-title(class=allMods)&attributes(attributes)=pageTitle
+  h1.ui-h1(class=allMods)&attributes(attributes)=text
     block

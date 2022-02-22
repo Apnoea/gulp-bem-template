@@ -1,6 +1,6 @@
-mixin section-title(sectionTitle, mods)
+mixin ui-h2(text, mods)
   -
-    const baseName = 'section-title'
+    const baseName = 'ui-h2'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,5 @@ mixin section-title(sectionTitle, mods)
       allMods = allMods.trim()
     }
 
-  h2.section-title(class=allMods)&attributes(attributes)=sectionTitle
+  h2.ui-h2(class=allMods)&attributes(attributes)=text
     block

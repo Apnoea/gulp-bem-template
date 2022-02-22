@@ -1,18 +1,36 @@
-image: node:14.17.3
+image: node:16.14.0
 
-pages:
+pages (main):
+  stage: deploy
   cache:
-    key: cache-for-my-task-${CI_COMMIT_REF_SLUG}
+    key: modules-cache-${CI_COMMIT_REF_SLUG}
     paths:
       - node_modules
-  stage: deploy
   script:
-  - npm install yarn
-  - yarn
-  - yarn build
-  - mv build public
+    - npm i --force
+    - npm run build
+    - mv build public
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - main
+    - main
+
+pages (secondary):
+  stage: deploy
+  cache:
+    key: modules-cache-${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+  script:
+    - npm i --force
+    - npm run build
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  environment:
+    name: $CI_COMMIT_BRANCH
+    url: "https://$CI_PROJECT_NAMESPACE.gitlab.io/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
+  except:
+    - main

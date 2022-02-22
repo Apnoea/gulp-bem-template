@@ -11,7 +11,7 @@ module.exports = {
           },
           techs: ['pug', 'scss'],
           levels: {
-            'src/blocks/': {
+            'src/blocks': {
               default: true
             }
           }
