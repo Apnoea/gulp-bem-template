@@ -1,0 +1,21 @@
+.ui-ul {
+  li {
+    position: relative;
+    padding-left: 25px;
+    &:not(:last-child) {
+      margin-bottom: 22px;
+      @include media-tablet {
+        margin-bottom: 20px;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc((1.25em + 5px) / 2);
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: teal;
+    }
+  }
+}

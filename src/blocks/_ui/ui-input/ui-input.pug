@@ -13,4 +13,5 @@ mixin ui-input(id, text, mods, type)
   .ui-input(class=allMods)
     input(id=id type=(typeof(type) !== 'undefined' && type ? type : 'text'))&attributes(attributes)
     if text
-      label(for=id)=text
+      label(for=id)
+        +ui-p6(text)

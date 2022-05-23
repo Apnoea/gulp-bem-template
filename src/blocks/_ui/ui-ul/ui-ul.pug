@@ -1,6 +1,6 @@
-mixin ui-h1(text, mods)
+mixin ui-ul(listItems, mods)
   -
-    const baseName = 'ui-h1'
+    const baseName = 'ui-ul'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,10 @@ mixin ui-h1(text, mods)
       allMods = allMods.trim()
     }
 
-  h1.ui-h1(class=allMods)&attributes(attributes)=text
+  ul.ui-ul(class=allMods)&attributes(attributes)
+    each item in listItems
+      li
+        +ui-p2(item.title)
+        if item.descr
+          +ui-p2(item.descr, '--light')
     block

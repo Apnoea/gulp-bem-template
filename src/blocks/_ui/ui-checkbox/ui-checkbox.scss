@@ -1,5 +1,5 @@
 .ui-checkbox {
-  input[type='checkbox'] {
+  input {
     display: none;
     &:checked + label {
       &::before {

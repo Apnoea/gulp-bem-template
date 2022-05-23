@@ -1,34 +1,22 @@
 extends layouts/layout
 
 block variables
-  -const pageTitle ='Repository blocks'
+  -const pageTitle = 'Repository blocks'
+
+  -
+    const listItems = [
+      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!' },
+      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
+      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
+    ]
 
 block content
   main
     .inner
       +ui-h1(pageTitle)
       +section()
-        +ui-h2('Breadcrumbs', 'section')
-        +breadcrumbs()
-          +breadcrumbs-item('Main', '/')
-          +breadcrumbs-item('News')
-      +section()
-        +ui-h2('Gallery', 'section')
-        +gallery()
-          +gallery-item('fancy_img1.png')
-          +gallery-item('fancy_img2.png')
-          +gallery-item('fancy_img3.png')
-      +section()
-        +ui-h2('Pagination', 'section')
-        +pagination()
-      +section()
-        +ui-h2('Section title', 'section')
-        +ui-h2('Section title')
-      +section()
-        +ui-h2('Slider', 'section')
-        +slider()
-      +section()
-        +ui-h2('UI Buttons', 'section')
+        +ui-h4('UI Buttons', 'section')
+        br
         +ui-button('Кнопка-ссылка')(href='/')
         +ui-button('Кнопка-submit', '', true)
         +ui-button('Кнопка-button')
@@ -38,38 +26,99 @@ block content
         +ui-button('Кнопка-submit', '--filled', true)
         +ui-button('Кнопка-button', '--filled')
       +section()
-        +ui-h2('UI Checkbox', 'section')
+        +ui-h4('UI Checkbox', 'section')
+        br
         +ui-checkbox('id', 'I love ')
           a(href='') semolina
       +section()
-        +ui-h2('UI Date', 'section')
-        +ui-h2('UI Date single', 'section')
+        +ui-h4('UI Datepicker', 'section')
+        br
+        +ui-h6('UI Date single', 'section')
         +ui-datepicker('', '--single')
-        +ui-h2('UI Date range', 'section, --mt')
+        br
+        +ui-h6('UI Date range', 'section, --mt')
         +ui-datepicker('', '--range')
-        +ui-h2('UI Date time', 'section, --mt')
+        br
+        +ui-h6('UI Date time', 'section, --mt')
         +ui-datepicker('', '--time')
       +section()
-        +ui-h2('UI Input', 'section')
+        +ui-h4('Titles')
+        br
+        .flex(style='display: flex; align-items: center')
+          +ui-h1('Text')
+          +ui-h2('Text')
+          +ui-h3('Text')
+          +ui-h4('Text')
+          +ui-h5('Text')
+          +ui-h6('Text')
+        br
+        br
+        +ui-h4('Paragraphs')
+        br
+        .flex(style='display: flex; align-items: center')
+          +ui-p1('Text')
+          +ui-p1('Text')
+          +ui-p2('Text')
+          +ui-p3('Text')
+          +ui-p4('Text')
+          +ui-p5('Text')
+          +ui-p6('Text')
+          +ui-p7('Text')
+          +ui-p8('Text')
+      +section()
+        +ui-h4('UI Input', 'section')
+        br
         +ui-input('phone', 'Phone')(required)
       +section()
-        +ui-h2('UI Range', 'section')
+        +ui-h4('UI Range', 'section')
+        br
         +ui-range()
       +section()
-        +ui-h2('UI Select', 'section')
-        +ui-select('', 'Option 1', 'Option 2', 'Option 3', 'Option 4')
+        +ui-h4('UI Select', 'section')
+        br
+        +ui-select('', '1', '2', '3', '4')(placeholder='Цель кредита')
       +section()
-        +ui-h2('UI Textarea', 'section')
+        +ui-h4('UI Textarea', 'section')
+        br
         +ui-textarea()(maxlength='256')
       +section()
-        +ui-h2('UI Tooltip', 'section')
+        +ui-h4('UI Tooltip', 'section')
+        br
         +ui-tooltip('Tooltip text')
       +section()
-        +ui-h2('Lazy load test', 'section')
+        +ui-h4('UI list', 'section')
+        br
+        +ui-ul(listItems)
+      +section()
+        +ui-h4('Breadcrumbs', 'section')
+        br
+        +breadcrumbs()
+          +breadcrumbs-item('Main', '/')
+          +breadcrumbs-item('News')
+      +section()
+        +ui-h4('Gallery', 'section')
+        br
+        +gallery()
+          +gallery-item('fancy_img1.png')
+          +gallery-item('fancy_img2.png')
+          +gallery-item('fancy_img3.png')
+      +section()
+        +ui-h4('Pagination', 'section')
+        br
+        +pagination()
+      +section()
+        +ui-h4('Slider', 'section')
+        br
+        +slider()
+      +section()
+        +ui-h4('Lazy load test', 'section')
+        br
         img.lazyload(src='img/swim.jpg' data-src='img/fancy_img1.png' alt='')
       +section()
-        +ui-h2('Lazy load test', 'section')
+        +ui-h4('Lazy load test', 'section')
+        br
         img.lazyload(src='img/swim.jpg' data-src='img/fancy_img2.png' alt='')
       +section()
-        +ui-h2('Lazy load test', 'section')
+        +ui-h4('Lazy load test', 'section')
+        br
         img.lazyload(src='img/swim.jpg' data-src='img/fancy_img3.png' alt='')

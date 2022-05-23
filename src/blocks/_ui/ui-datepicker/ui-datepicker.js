@@ -3,7 +3,7 @@ import { Russian } from 'flatpickr/dist/l10n/ru'
 
 export default function uiDatepicker() {
   // datepicker settings
-  const tomorrowDate = new Date().setDate(new Date().getDate() + 1)
+  const tomorrowDate = new Date().fp_incr(1)
   const defaultSettings = {
     locale: Russian,
     defaultDate: 'today',

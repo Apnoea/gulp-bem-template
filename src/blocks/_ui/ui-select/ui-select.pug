@@ -10,7 +10,9 @@ mixin ui-select(mods, ...data)
       allMods = allMods.trim()
     }
 
-  .ui-select(class=allMods)&attributes(attributes)
-    select
+  .ui-select(class=allMods)
+    select&attributes(attributes)
+      option
       each item in data
         option=item
+      block

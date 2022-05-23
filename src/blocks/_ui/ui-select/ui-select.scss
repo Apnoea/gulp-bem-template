@@ -1,3 +1,180 @@
 .ui-select {
+  position: relative;
   width: 100%;
+  select {
+    &:disabled {
+      ~ .select2-container {
+        opacity: 0.6;
+      }
+    }
+    &.parsley-error {
+      ~ .select2-container {
+        .select2 {
+          &-selection {
+            border-color: red;
+          }
+        }
+      }
+    }
+  }
+  .select2-container {
+    display: block;
+    .select2 {
+      &-selection {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding-right: 40px;
+        background: #fff;
+        border: 1px solid $teal;
+        border-radius: 6px;
+        transition: border 0.3s;
+        &__placeholder {
+          font: 16px/1.4 $font;
+          @include media-laptop {
+            font-size: 14px;
+          }
+        }
+        &__rendered {
+          padding-left: 20px;
+          font-size: 18px;
+          font-family: $font;
+          line-height: 1;
+          color: $black;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @include media-tablet {
+            font-size: 16px;
+          }
+        }
+        &__choice {
+          display: inline-flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          margin-left: 0;
+          margin-right: 5px;
+          padding: 0;
+          border: 0;
+          background-color: transparent;
+          span {
+            padding-right: 0;
+          }
+          button {
+            position: static;
+            left: auto;
+            padding: 0;
+            border: 0;
+            &:hover {
+              background-color: inherit;
+            }
+            span {
+              position: relative;
+              font-size: 0;
+              &::before {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 8px;
+                background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.667 1.333 1.333 6.667m0-5.334 5.334 5.334' stroke='%23A7A7A7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+              }
+            }
+          }
+        }
+        .select2-search,
+        &__arrow {
+          position: absolute;
+          top: 50%;
+          right: 22px;
+          transform: translateY(-50%);
+          width: 12px;
+          height: 8px;
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 12px;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23333333' stroke-width='2'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 1;
+            transition: 0.3s;
+          }
+          b,
+          textarea {
+            display: none;
+          }
+        }
+      }
+      &-dropdown {
+        padding: 5px 0;
+        border-color: teal;
+      }
+      &-results {
+        padding: 14px 14px 14px 0;
+        font-size: 15px;
+        line-height: 1.5;
+        color: $black;
+        @include media-tablet {
+          font-size: 14px;
+        }
+        &__options {
+          max-height: 335px;
+          &::-webkit-scrollbar-track {
+            border-radius: 5px;
+          }
+          &::-webkit-scrollbar {
+            width: 3px;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+          }
+          &--nested {
+            .select2-results__option {
+              &:first-child {
+                padding: 6px 0 6px 14px;
+              }
+            }
+          }
+        }
+        &__group {
+          padding-left: 14px;
+          color: $teal;
+        }
+        &__option {
+          padding: 6px 0 6px 14px;
+          font-family: $font;
+          white-space: unset;
+          transition: color 0.3s;
+          &--group {
+            padding-left: 0;
+          }
+          &--highlighted {
+            background-color: $teal;
+            &.select2-results__option--selectable {
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+    &.select2-container--open {
+      .select2 {
+        &-selection {
+          border-color: $teal;
+          .select2-search,
+          &__arrow {
+            &::after {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  &--hidden {
+    display: none;
+  }
 }

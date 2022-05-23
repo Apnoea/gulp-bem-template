@@ -1,0 +1,89 @@
+mixin ui-h1(title, mods)
+  -
+    const baseName = 'ui-h1'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  h1.ui-h1(class=allMods)&attributes(attributes) !{title}
+    block
+
+mixin ui-h2(title, mods)
+  -
+    const baseName = 'ui-h2'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  h2.ui-h2(class=allMods)&attributes(attributes) !{title}
+    block
+
+mixin ui-h3(title, mods)
+  -
+    const baseName = 'ui-h3'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  h3.ui-h3(class=allMods)&attributes(attributes) !{title}
+    block
+
+mixin ui-h4(title, mods)
+  -
+    const baseName = 'ui-h4'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  h4.ui-h4(class=allMods)&attributes(attributes) !{title}
+    block
+
+mixin ui-h5(title, mods)
+  -
+    const baseName = 'ui-h5'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  h5.ui-h5(class=allMods)&attributes(attributes) !{title}
+    block
+
+mixin ui-h6(title, mods)
+  -
+    const baseName = 'ui-h6'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  h6.ui-h6(class=allMods)&attributes(attributes) !{title}
+    block

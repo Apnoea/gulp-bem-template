@@ -1,6 +1,6 @@
 import 'select2'
 
-export default function uiSelects() {
+export default function uiSelect() {
   const selects = document.querySelectorAll('.ui-select select')
   for (const select of selects) {
     const selectParent = select.parentElement
@@ -8,7 +8,8 @@ export default function uiSelects() {
       minimumResultsForSearch: Number.POSITIVE_INFINITY,
       width: 'auto',
       dropdownAutoWidth: true,
-      dropdownParent: selectParent
+      dropdownParent: selectParent,
+      placeholder: select.getAttribute('placeholder') ? select.getAttribute('placeholder') : ''
     })
   }
 }

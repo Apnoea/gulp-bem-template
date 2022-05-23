@@ -1,0 +1,64 @@
+mixin ui-swiper-pagination(mods)
+  -
+    const baseName = 'ui-swiper-pagination'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .ui-swiper-pagination(class=allMods)&attributes(attributes)
+    .swiper-pagination
+      block
+
+mixin ui-swiper-buttons(mods)
+  -
+    const baseName = 'ui-swiper-buttons'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .ui-swiper-buttons(class=allMods)&attributes(attributes)
+    .swiper-button-prev
+    .swiper-button-next
+    block
+
+mixin ui-swiper-bullets(mods)
+  -
+    const baseName = 'ui-slider-bullets'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .ui-swiper-bullets(class=allMods)&attributes(attributes)
+    .swiper-pagination
+      block
+
+mixin ui-swiper-fraction(mods)
+  -
+    const baseName = 'ui-swiper-fraction'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .ui-swiper-fraction(class=allMods)&attributes(attributes)
+    .swiper-pagination
+      block

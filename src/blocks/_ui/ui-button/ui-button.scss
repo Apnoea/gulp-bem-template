@@ -1,10 +1,11 @@
 .ui-button {
-  display: inline-block;
-  width: 250px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 15px 50px;
   text-align: center;
   text-transform: uppercase;
-  font: 16px/1.5 $font;
+  font: 16px/1 $font;
   color: $black;
   background: #fff;
   border: 1px solid $teal;
