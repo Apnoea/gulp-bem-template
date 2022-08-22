@@ -1,0 +1,41 @@
+.ui-ol {
+  counter-reset: itemOl;
+  list-style-type: none;
+  li {
+    position: relative;
+    padding-left: 40px;
+    counter-increment: itemOl;
+    @include media-laptop {
+      padding-left: 35px;
+    }
+    &::before {
+      content: counter(itemOl);
+      position: absolute;
+      top: 10px;
+      left: 0;
+      font-size: 16px;
+      color: teal;
+      @include media-laptop {
+        top: 6px;
+      }
+      @include media-tablet {
+        top: 4px;
+        font-size: 14px;
+      }
+    }
+    &:nth-child(-n+9) {
+      &::before {
+        content: '0' counter(itemOl);
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      @include media-laptop {
+        margin-bottom: 25px;
+      }
+      @include media-tablet {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

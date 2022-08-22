@@ -19,9 +19,6 @@ html(lang='ru')
       block footer
         include ../blocks/footer/footer
     block scripts
-      script(src='https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js')
-      script.
-        svg4everybody();
       if process.env.NODE_ENV === 'development'
         script(src='js/vendors.js')
       script(src='js/scripts.js')

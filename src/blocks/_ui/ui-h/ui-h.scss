@@ -47,3 +47,9 @@
     font-size: 14px;
   }
 }
+[class$='--light'] {
+  font-weight: 300;
+}
+[class$='--bold'] {
+  font-weight: 700;
+}

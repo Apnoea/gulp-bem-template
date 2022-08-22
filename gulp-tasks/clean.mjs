@@ -1,8 +1,8 @@
-import del from 'del'
+import { deleteAsync } from 'del'
 import cached from 'gulp-cached'
 
 export default function clean(callback) {
-  return del('build/*').then(() => {
+  return deleteAsync('build/*').then(() => {
     cached.caches = {}
     callback()
   })

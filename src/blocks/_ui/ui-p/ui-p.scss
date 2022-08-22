@@ -9,9 +9,6 @@
   @include media-tablet {
     font-size: 18px;
   }
-  &--light {
-    font-weight: 300;
-  }
 }
 .ui-p3 {
   font: 18px/1.5 $font;
@@ -48,4 +45,10 @@
   @include media-tablet {
     font-size: 11px;
   }
+}
+[class$='--light'] {
+  font-weight: 300;
+}
+[class$='--bold'] {
+  font-weight: 700;
 }

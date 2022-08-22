@@ -5,7 +5,6 @@ import dependents from 'gulp-dependents'
 import pugLinter from 'gulp-pug-linter'
 import filter from 'gulp-filter'
 import pug from 'gulp-pug'
-import { htmlValidator } from 'gulp-w3c-html-validator'
 import browsersync from 'browser-sync'
 
 export default function pug2html() {
@@ -21,8 +20,6 @@ export default function pug2html() {
     .pipe(pugLinter({ reporter: 'default' }))
     .pipe(filter('src/*.pug'))
     .pipe(pug({ pretty: true }))
-    .pipe(htmlValidator.analyzer())
-    .pipe(htmlValidator.reporter())
     .pipe(gulp.dest('build'))
     .on('end', browsersync.reload)
 }

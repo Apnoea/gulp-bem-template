@@ -4,7 +4,13 @@ block variables
   -const pageTitle = 'Repository blocks'
 
   -
-    const listItems = [
+    const orderListItems = [
+      { p1: 'Lorem' },
+      { p1: 'Lorem' },
+      { p1: 'Lorem' }
+    ]
+  -
+    const unorderListItems = [
       { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!' },
       { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
       { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
@@ -44,7 +50,7 @@ block content
       +section()
         +ui-h4('Titles')
         br
-        .flex(style='display: flex; align-items: center')
+        .flex(style='display: flex; align-items: baseline')
           +ui-h1('Text')
           +ui-h2('Text')
           +ui-h3('Text')
@@ -55,8 +61,7 @@ block content
         br
         +ui-h4('Paragraphs')
         br
-        .flex(style='display: flex; align-items: center')
-          +ui-p1('Text')
+        .flex(style='display: flex; align-items: baseline')
           +ui-p1('Text')
           +ui-p2('Text')
           +ui-p3('Text')
@@ -86,15 +91,35 @@ block content
         br
         +ui-tooltip('Tooltip text')
       +section()
-        +ui-h4('UI list', 'section')
+        +ui-h4('UI order list', 'section')
         br
-        +ui-ul(listItems)
+        +ui-ol(orderListItems)
+        br
+        br
+        +ui-h4('UI unorder list', 'section')
+        br
+        +ui-ul(unorderListItems)
       +section()
         +ui-h4('Breadcrumbs', 'section')
         br
         +breadcrumbs()
           +breadcrumbs-item('Main', '/')
           +breadcrumbs-item('News')
+      +section
+        +ui-h4('From validation', 'section')
+        br
+        form(action='')
+          +ui-input('name', 'Name')(required)
+          br
+          +ui-input('mail', 'Mail')(required)
+          br
+          +ui-input('phone', 'Phone')(required)
+          br
+          +ui-select('', '1', '2', '3', '4')#select(placeholder='Цель кредита' required)
+          br
+          +ui-checkbox('agreement', 'I love ')(required)
+          br
+          +ui-button('Кнопка-submit', '', true)
       +section()
         +ui-h4('Gallery', 'section')
         br
